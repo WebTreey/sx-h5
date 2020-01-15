@@ -1,0 +1,98 @@
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0 10px !important;
+}
+
+.product-img img {
+  width: 100% !important;
+}
+
+.picker-toolbar {
+  height: 80px !important;
+}
+
+.btn-group .btn {
+  margin: 0 10px;
+}
+
+.btn {
+  height: 60px;
+  line-height: 60px;
+  padding: 0 20px;
+  text-align: center;
+  border-radius: 4Px;
+  background: #f2f2f2;
+  color: #333;
+  border: 1Px solid #dedede;
+  font-size: 28px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.btn.white {
+  border: solid 1Px #dedede;
+  color: #333;
+  background: transparent;
+}
+
+.btn.red {
+  border: solid 1Px #f25454;
+  color: #f25454;
+  background: transparent;
+}
+
+.btn.red-bg {
+  color: #fff;
+  background: #F15353;
+  border: 0;
+}
+
+.mint-toast-text {
+  font-size: 28px !important;
+}
+
+.tr-90 {
+  transform: rotate(90deg);
+}
+
+.tr-180 {
+  transform: rotate(180deg);
+}
+
+.tr-270 {
+  transform: rotate(-90deg);
+}
+
+.mint-indicator-mask {
+  z-index: 9999;
+}
+
+.mint-msgbox-header {
+  padding: 30px 0 0;
+}
+
+.mint-msgbox-title {
+  font-size: 32px;
+}
+
+.mint-msgbox-message {
+  line-height: 72px;
+}
+
+.mint-msgbox-input {
+  padding-top: 30px
+}
+
+.mint-msgbox-btns {
+  height: 80px;
+  line-height: 80px;
+}
+
+.mint-msgbox-message {
+  font-size: 32px;
+}
+
+.mint-msgbox-btn {
+  font-size: 32px;
+}
