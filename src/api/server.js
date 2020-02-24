@@ -32,7 +32,7 @@ let service = new axios.create({
 service.interceptors.request.use(function (config) {
     Indicator.open();
     //'8KDJ26_52a634ce7e84b31a371bca481b8ce126' //
-    config.headers.userKey = '8KDJ26_52a634ce7e84b31a371bca481b8ce126' // userInfo.userKey || store.state.userInfo.userKey
+    config.headers.userKey = '8KDJ26_52a634ce7e84b31a371bca481b8ce126' //userInfo.userKey || store.state.userInfo.userKey
     return config;
 }, error => {  //请求错误处理
     Promise.reject(error)

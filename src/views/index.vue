@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <div class="header df">
+      <i class="iconfont tr-90" @click="exit">&#xe6ab;</i>
       <div class="search df fl" @click="$router.push('/search')">
         <img src="../assets/images/search.png" class="search-icon" />
         <span class="ml-10">搜索</span>
@@ -146,7 +147,7 @@ export default {
   },
   mounted() {
     var _this = this;
-    
+
     if (commault.isIphone()) {
       this.$bridge.callhandler("getUserKey", {}, function(data) {
         _this.$store.state.userInfo =
@@ -175,14 +176,8 @@ export default {
               slidesPerView: "auto",
               observer: true,
               observeParents: true,
-              autoplay: {
-                disableOnInteraction: false,
-                delay: 3000
-              },
-              pagination: {
-                el: ".swiper-pagination",
-                clickable: true
-              }
+              autoplay:3000,
+              pagination: ".swiper-pagination"
             });
           });
         }
@@ -212,6 +207,23 @@ export default {
     },
     backTop() {
       commault.backTop();
+    },
+    exit() {
+      var isI = commault.isIphone();
+      console.log(isI);
+      if (isI) {
+        this.$bridge.callhandler("viewBack", function() {
+          console.log("成功");
+        });
+      } else {
+        try {
+          window.Androids.viewBack(function() {
+            console.log("成功");
+          });
+        }catch(err){
+          console.log(err)
+        }
+      }
     }
   },
   destroyed() {

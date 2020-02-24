@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <sd-header :title="$store.state.title"></sd-header>
-
     <transition :name="transitionName">
       <keep-alive include="orderCenter">
         <router-view class="router" />
@@ -30,7 +29,7 @@ export default {
   watch: {
     $route(to, from) {
       console.log(this.$router.isBack);
-      let isBack = this.$router.isBack; //  监听路由变化时的状态为前进还是后退
+      var isBack = this.$router.isBack; //  监听路由变化时的状态为前进还是后退
       if (isBack) {
         this.transitionName = "slide-right";
       } else {
@@ -68,14 +67,12 @@ html {
 }
 .slide-left-enter,
  .slide-right-leave-active {
-  opacity: 0;
   -webkit-transform: translate(100%, 0);
   transform: translate(100%, 0);
 }
 
 .slide-left-leave-active,
 .slide-right-enter {
-  opacity: 0;
   -webkit-transform: translate(-100%, 0);
   transform: translate(-100% 0);
 }

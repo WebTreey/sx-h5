@@ -1,5 +1,8 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import 'babel-polyfill'
+
+
 import Vue from 'vue'
 import App from './App'
 import router from './router'
@@ -16,7 +19,12 @@ import './utils/rem'
 import './assets/css/communal.css'
 import './assets/css/main.css'
 import './assets/font/iconfont.css'
-import 'babel-polyfill'
+// import VConsole from 'vconsole/dist/vconsole.min.js'
+// var vConsole = new VConsole() 
+// Vue.use(vConsole)
+
+
+require('es6-promise').polyfill();
 Vue.prototype.$bridge = Bridge
 Vue.prototype.$message = function (message) {
   Toast({
@@ -27,7 +35,7 @@ Vue.prototype.$message = function (message) {
 router.beforeEach((to, form, next) => {
   let app = document.getElementById('app');
   if (to.meta.title == '订单中心') {
-    
+
   } else {
     app.scrollTop = 0;
   }
@@ -46,6 +54,8 @@ Vue.use(vueLazy, {
   attempt: 1
 })
 Vue.config.productionTip = false
+import Es6Promise from 'es6-promise'
+Es6Promise.polyfill();
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
