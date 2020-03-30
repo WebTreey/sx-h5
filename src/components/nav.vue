@@ -31,19 +31,20 @@ export default {
 <style lang="scss" scoped>
 .nav {
   height: 120px;
-  background: #404042;
+  background: #f5f5f5;
   position: fixed;
   left: 0;
   width: 100%;
   bottom: 0;
   z-index: 9;
+  border-top:1Px solid #ccc;
   ul {
     height: inherit;
     li {
       flex: 1;
-      color: #fff;
+      color: #333;
       .iconfont{
-        color: #fff;
+        color: #333;
       }
     }
   }

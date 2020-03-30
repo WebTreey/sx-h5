@@ -17,13 +17,17 @@
                 ></span>
                 <!-- <i class="iconfont">{{cart.checked?'&#xe654;':'&#xe6ba;'}}</i> -->
               </div>
-              <div
-                class="cart-product ml-20 df af"
-                @click="$router.push(`/productList/details/${cart.product.id}`)"
-              >
-                <img class="product-img" :src="$store.state.BASE_IMG+cart.product.masterImg" />
+              <div class="cart-product ml-20 df af">
+                <img
+                  class="product-img"
+                  :src="$store.state.BASE_IMG+cart.product.masterImg"
+                  @click="$router.push(`/productList/details/${cart.product.id}`)"
+                />
                 <div class="ml-10">
-                  <h4 class="to-2 fs-28">{{cart.product.name1}}</h4>
+                  <h4
+                    class="to-2 fs-28"
+                    @click="$router.push(`/productList/details/${cart.product.id}`)"
+                  >{{cart.product.name1}}</h4>
                   <div>
                     <p class="col-red mt-10 fs-28">￥{{cart.productGoods.mallMobilePrice || '0.00'}}</p>
                     <div class="mt-10 df jb">
@@ -193,6 +197,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .cart-list {
+  padding-bottom: 116px;
   .item {
     h3 {
       background: #dedede;

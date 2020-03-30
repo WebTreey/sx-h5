@@ -16,7 +16,10 @@ export default {
     return {
       style: {
         top: ".8rem",
-        position:'absolute'
+        position:'absolute',
+        borderTop:0,
+        borderBottom:'1px solid #ccc',
+        boxShadow:'0 3px 5px 0px rgba(0,0,0,.2)'
       },
       isnav: false
     };

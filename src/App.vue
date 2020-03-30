@@ -1,11 +1,14 @@
 <template>
   <div id="app">
     <sd-header :title="$store.state.title"></sd-header>
-    <transition :name="transitionName">
+    <!-- <transition :name="transitionName">
       <keep-alive include="orderCenter">
         <router-view class="router" />
       </keep-alive>
-    </transition>
+    </transition>-->
+    <keep-alive include="orderCenter">
+      <router-view class="router" />
+    </keep-alive>
   </div>
 </template>
 
@@ -22,13 +25,13 @@ export default {
     "sd-header": header
   },
   created() {
-    window.onpopstate = (e) => {
+    window.onpopstate = e => {
       this.$router.isBack = true;
     };
   },
   watch: {
     $route(to, from) {
-      console.log(this.$router.isBack);
+     
       var isBack = this.$router.isBack; //  监听路由变化时的状态为前进还是后退
       if (isBack) {
         this.transitionName = "slide-right";
@@ -36,8 +39,10 @@ export default {
         this.transitionName = "slide-left";
       }
       this.$router.isBack = false;
+     
     }
-  }
+  },
+  
 };
 </script>
 <style >

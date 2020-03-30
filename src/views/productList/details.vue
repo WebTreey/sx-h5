@@ -362,7 +362,7 @@ export default {
   methods: {
     ProductFn(id) {
       getProduct({ id }).then(res => {
-        console.log(res)
+        console.log(res);
         if (res.success) {
           let productInfo = (this.productInfo = res.data);
           this.bannerList = res.data.productLeadPicList || [];
@@ -389,14 +389,8 @@ export default {
             let swiper = new Swiper(".swiper-container", {
               loop: true,
               slidesPerView: "auto",
-              autoplay: {
-                disableOnInteraction: false,
-                delay: 3000
-              },
-              pagination: {
-                el: ".swiper-pagination",
-                clickable: true
-              }
+              autoplay: 3000,
+              pagination: ".swiper-pagination"
             });
           });
         }
@@ -486,7 +480,7 @@ export default {
           productGoodId: this.goods.id,
           sellerId: this.seller.id,
           count: this.countValue,
-          buyFlag:0
+          buyFlag: 0
         }).then(res => {
           if (res.success) {
             this.$message("加入购物车成功");
@@ -558,7 +552,7 @@ export default {
           productGoodId: this.goods.id,
           sellerId: this.seller.id,
           count: this.countValue,
-          buyFlag:1,
+          buyFlag: 1
         }).then(res => {
           if (res.success) {
             this.cartNumber += this.countValue;
@@ -587,6 +581,8 @@ export default {
         setTimeout(() => {
           this.timeDown(s);
         }, 1000);
+      } else {
+        this.timeData = 0;
       }
     }
   }
@@ -596,9 +592,9 @@ export default {
 .banner {
   .swiper-wrapper {
     touch-action: none;
-    
-    img{
-      width: 100%
+
+    img {
+      width: 100%;
     }
   }
   .seckil-time {

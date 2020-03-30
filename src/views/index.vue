@@ -145,7 +145,7 @@ export default {
       loginText: this.$store.state.userInfo.name || "登录"
     };
   },
-  mounted() {
+  created() {
     var _this = this;
 
     if (commault.isIphone()) {
@@ -176,8 +176,17 @@ export default {
               slidesPerView: "auto",
               observer: true,
               observeParents: true,
-              autoplay:3000,
-              pagination: ".swiper-pagination"
+              autoplay: 3000,
+              autoplayDisableOnInteraction: false,
+              pagination: ".swiper-pagination",
+              effect: "coverflow",
+              coverflow: {
+                rotate: 0,
+                stretch: 40,
+                depth: 70,
+                modifier: 1,
+                slideShadows: false
+              }
             });
           });
         }
@@ -220,8 +229,8 @@ export default {
           window.Androids.viewBack(function() {
             console.log("成功");
           });
-        }catch(err){
-          console.log(err)
+        } catch (err) {
+          console.log(err);
         }
       }
     }
@@ -266,6 +275,13 @@ export default {
   .swiper-container {
     &.banner {
       height: 360px;
+      img {
+        width: 80% !important;
+        margin: 0 auto;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 10px 2px rgba($color: #000000, $alpha: 0.2);
+      }
     }
     .swiper-slide {
       transition: 300ms;

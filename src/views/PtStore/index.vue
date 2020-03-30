@@ -18,8 +18,16 @@
         </h3>
         <div class="btn-groupt df jc">
           <div class="btn red" @click="openClassifyFn">店铺分类</div>
-          <div class="btn red" @click="collectionShopFn" v-show="this.storeList.collected=='false'">收藏店铺</div>
-          <div class="btn red" @click="collectionShopFn" v-show="this.storeList.collected=='true'">取消收藏</div>
+          <div
+            class="btn red"
+            @click="collectionShopFn"
+            v-show="this.storeList.collected=='false'"
+          >收藏店铺</div>
+          <div
+            class="btn red"
+            @click="collectionShopFn"
+            v-show="this.storeList.collected=='true'"
+          >取消收藏</div>
         </div>
       </div>
       <div class="mr-20 ml-20 content">
@@ -54,7 +62,10 @@
         </h3>
         <ul class="df">
           <li v-for="(datas,index) in item.datas" :key="index">
-            <div class="list-item" @click="$router.push(`/productList/details/${datas.product.id}`)">
+            <div
+              class="list-item"
+              @click="$router.push(`/productList/details/${datas.product.id}`)"
+            >
               <img v-lazy="$store.state.BASE_IMG+datas.product.masterImg" />
               <div>
                 <p class="to-2 title">{{datas.product.name1}}</p>
@@ -102,14 +113,8 @@ export default {
           let swiper = new Swiper(".store-banner", {
             loop: true,
             slidesPerView: "auto",
-            autoplay: {
-              disableOnInteraction: false,
-              delay: 3000
-            },
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true
-            }
+            autoplay: 3000,
+            pagination: ".swiper-pagination"
           });
         });
       });
@@ -140,9 +145,8 @@ export default {
 <style lang="scss" scoped>
 .banner {
   .swiper-slide {
-    
-    img{
-      width: 100%
+    img {
+      width: 100%;
     }
   }
 }
