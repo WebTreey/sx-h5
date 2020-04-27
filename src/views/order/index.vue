@@ -428,6 +428,7 @@ export default {
           useCouponSellerIds.push(item);
         }
       });
+      console.log(this.selected);
       coupon.paymentName = this.paymentName || "";
       coupon.paymentCode = this.paymentCode || "";
       coupon.addressId = address.id;
@@ -437,15 +438,17 @@ export default {
       coupon.invoiceId = this.invoiceId == -1 ? "" : this.invoiceId;
       coupon.invoiceTaxNumber = this.invoiceTaxNumber;
       coupon.useCouponSellerIds = useCouponSellerIds.join(",");
+      coupon.extendId = "123456";
+      coupon.source = "5";
       ordercommit(coupon).then(res => {
         console.log(res);
         if (res.success) {
           if (res.data.paymentCode == "OFFLINE") {
-            this.$message("订单提交成功");
+            // this.$message("订单提交成功");
             this.$router.replace(`/personalCenter/orderCenter`);
           } else {
             this.$router.replace(
-              `/order/pay?orderSn=${res.data.mainOrder.orderSn}`
+              `/order/pay?orderSn=${res.data.mainOrder.orderSn}&source=${res.data.mainOrder.source}`
             );
           }
         }

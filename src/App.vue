@@ -31,7 +31,6 @@ export default {
   },
   watch: {
     $route(to, from) {
-     
       var isBack = this.$router.isBack; //  监听路由变化时的状态为前进还是后退
       if (isBack) {
         this.transitionName = "slide-right";
@@ -39,13 +38,12 @@ export default {
         this.transitionName = "slide-left";
       }
       this.$router.isBack = false;
-     
     }
-  },
-  
+  }
 };
 </script>
 <style >
+@import "./assets/css/swiper.min.css";
 body,
 html {
   width: 100%;

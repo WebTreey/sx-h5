@@ -60,7 +60,9 @@ export default {
         console.log(res);
         if (res.success) {
           this.payData = res.data;
-          this.mechannelInfo = res.data.mechannelInfo;
+          this.mechannelInfo = res.data.mechannelInfo || {};
+        } else {
+          this.$message(res.message);
         }
       });
     },

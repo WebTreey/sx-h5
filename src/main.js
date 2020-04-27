@@ -12,16 +12,13 @@ import vueLazy from 'vue-lazyload'
 import search from './components/search.vue'
 import nav from './components/nav.vue'
 import './utils/appFn'
-import "./assets/css/swiper.min.css"
 import { Toast, Picker, InfiniteScroll, Checklist } from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import './utils/rem'
 import './assets/css/communal.css'
 import './assets/css/main.css'
 import './assets/font/iconfont.css'
-// import VConsole from 'vconsole/dist/vconsole.min.js'
-// var vConsole = new VConsole() 
-// Vue.use(vConsole)
+
 
 
 require('es6-promise').polyfill();
